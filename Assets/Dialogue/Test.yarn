@@ -1,0 +1,84 @@
+﻿title: Start
+---
+<<declare $talked_to_wife = false>>
+<<declare $read_pennant = false>>
+<<declare $has_ring = false>>
+<<declare $has_key = false>>
+
+<<if $has_key>>
+    <<jump Wife_Done>>
+<<elseif $has_ring>>
+    <<jump Wife_RingFound>>
+<<elseif $talked_to_wife>>
+    <<jump Wife_Reminder>>
+<<else>>
+    <<jump Wife_Intro>>
+<<endif>>
+===
+
+title: Wife_Intro
+---
+Wife: I wonder where my dear husband pookie bear Oski is...
+Goober: Ummmm... okay... do you happen to have a key?
+Wife: O-oh hi there! I actually picked up an old key on campus the other day.
+Wife: I won't just give it to you though. I need your help.
+Wife: MY WEDDING RING HAS GONE MISSING!!!
+Wife: Help me find my wedding ring and I'll give you the key, deal? Unless you have, you know, some other information about my husband…
+<<set $talked_to_wife to true>>
+-> Girl what. I'll find your wedding ring I guess.
+-> Oski won't like that you lost your ring… <<if $read_pennant>>
+    <<jump Wife_Situation>>
+===
+
+title: Wife_Situation
+---
+Wife: Waaaaaittt... what? How do you know the name of my dear husband pookie bear?
+-> Your husband's a stalker. Leave him now.
+    Wife: Huh, how'd you know?
+    Goober: He wrote "I'm in your walls" on your Cal pennant! That's so weird!
+    Wife: Awww he wrote that? How sweet of him! He loves me so much.
+    Goober: EXCUSE ME?
+    Wife: WHAT! Are you judging me?! Get out of my room, loser!
+-> Oski's dead. I had a vision where I saw his ghost.
+    Wife: OSKI!? MY BEAUTIFUL HANDSOME TALL SMART STRONG NONCHALANT CUTIE POOKIE BEAR OSKI?
+    Goober: Yes. Look, his ghost left this message on your Cal pennant. "I'm in your walls." He's definitely a ghost, girl.
+    Wife: That's not enough evidence. He could have written it alive!
+    Goober: Uhm actually, no he couldn't, because why else would he write this sentence? To be in your walls, one must not have a physical body. To not have a physical body, one must be air, aka dead. He's watching over you in the spirit realm!!! Just trust me bro.
+    Wife: Ohh... I see... that makes sense. *sniff* So what do I do now? I'm gonna cry.
+    Goober: Don't cry! Look, Oski's dead, which means you can get a beautifuller, handsomer, taller, smarter, stronger, nonchalant-er husband okay?
+    Wife: *sniff* Okay...
+    Goober: And you can interview for 20 consulting clubs to numb the pain, okay?
+    Wife: *sniff sniff sniff* Okay...
+    Goober: Aaaand about that ring—you don't need it anymore, okay?
+    Wife: *hiccup* You're right... take the key and get out of my sight... *sniff sniff* I need some alone time…
+    <<set $has_key to true>>
+===
+
+title: Wife_Reminder
+---
+// Placeholder: shown if you talk to her again before finding the ring
+Wife: Did you find my wedding ring yet?
+-> Still looking.
+-> Oski won't like that you lost your ring… <<if $read_pennant>>
+    <<jump Wife_Situation>>
+===
+
+title: Wife_RingFound
+---
+Wife: Oh! You actually found my beautiful wedding ring! Thank you so much!
+Wife: Here’s the key. I must continue looking for my husband now.
+<<set $has_key to true>>
+===
+
+title: Wife_Done
+---
+// Placeholder: shown if you talk to her after getting the key
+Wife: Please... I need some alone time.
+===
+
+title: Wife_Pennant
+---
+Player: I think someone wrote something on this Cal pennant...
+Player: "I'm in your walls... - Oski"
+<<set $read_pennant to true>>
+===
