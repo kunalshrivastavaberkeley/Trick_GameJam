@@ -56,7 +56,6 @@ Wife: Waaaaaittt... what? How do you know the name of my dear husband pookie bea
 
 title: Wife_Reminder
 ---
-// Placeholder: shown if you talk to her again before finding the ring
 Wife: Did you find my wedding ring yet?
 -> Still looking.
 -> Oski won't like that you lost your ring… <<if $read_pennant>>
@@ -82,3 +81,4 @@ Player: I think someone wrote something on this Cal pennant...
 Player: "I'm in your walls... - Oski"
 <<set $read_pennant to true>>
 ===
+

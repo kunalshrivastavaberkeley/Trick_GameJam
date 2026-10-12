@@ -424,8 +424,8 @@ GameObject:
   - component: {fileID: 3402421129183313148}
   - component: {fileID: 6516521878586322169}
   - component: {fileID: 8181759836788688680}
-  - component: {fileID: 2676956987023168331}
   - component: {fileID: 4197458303910179832}
+  - component: {fileID: 2676956987023168331}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -441,8 +441,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6971169438419752633}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.031265274, y: 0.5194358, z: -0.019022865, w: 0.8537254}
-  m_LocalPosition: {x: -20.000002, y: 2.9999993, z: 2.5}
+  m_LocalRotation: {x: 0.031265292, y: 0.5194358, z: -0.019022876, w: 0.8537254}
+  m_LocalPosition: {x: -20, y: 2.9999993, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -472,7 +472,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 40
+    FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -551,27 +551,13 @@ MonoBehaviour:
       Size: {x: 0.8, y: 0.75}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 0, z: 0}
+  TargetOffset: {x: 0, y: 0.5, z: 0}
   Damping: {x: 1.4, y: 0.5}
   Lookahead:
     Enabled: 1
     Time: 0.382
     Smoothing: 12.4
     IgnoreY: 1
---- !u!114 &2676956987023168331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6971169438419752633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87aeea221358b9e4097fe3d23a18c388, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraPriorityToggle
-  activePriority: 20
-  inactivePriority: 0
 --- !u!114 &4197458303910179832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,4 +574,18 @@ MonoBehaviour:
   PivotOffset: {x: 0, y: 0, z: 0}
   AmplitudeGain: 1
   FrequencyGain: 1
-  m_NoiseOffsets: {x: 0, y: 0, z: 0}
+  m_NoiseOffsets: {x: 978.6505, y: 132.96045, z: 956.557}
+--- !u!114 &2676956987023168331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6971169438419752633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aeea221358b9e4097fe3d23a18c388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraPriorityToggle
+  activePriority: 20
+  inactivePriority: 0
