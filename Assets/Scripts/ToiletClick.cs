@@ -6,18 +6,17 @@ public class ToiletClicker : MonoBehaviour
 {
     [SerializeField] DialogueRunner dialogueRunner;
     [SerializeField] int clicksNeeded = 500;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip flushSound;
 
-    // Click counts that pop up a line of dialogue. Every other click is silent.
     [SerializeField] int[] milestoneClicks = { 100, 250, 400, 499 };
 
-    void OnMouseDown()
+    public void Click()
     {
-        // Don't count clicks while a conversation is on screen
         if (dialogueRunner.IsDialogueRunning) return;
 
         var storage = dialogueRunner.VariableStorage;
 
-        // Already got the ring? Nothing left in there.
         storage.TryGetValue("$has_ring", out bool hasRing);
         if (hasRing)
         {
@@ -25,7 +24,6 @@ public class ToiletClicker : MonoBehaviour
             return;
         }
 
-        // Count is stored in Yarn so it saves/loads with the rest of your variables
         storage.TryGetValue("$toilet_clicks", out float clicks);
         clicks++;
         storage.SetValue("$toilet_clicks", clicks);
@@ -37,6 +35,7 @@ public class ToiletClicker : MonoBehaviour
         else if (Array.IndexOf(milestoneClicks, (int)clicks) >= 0)
             dialogueRunner.StartDialogue("Toilet_Progress");
 
-        // Optional: play a flush sound / wobble the toilet here for feedback on every click
+        audioSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
+        audioSource.PlayOneShot(flushSound);
     }
 }

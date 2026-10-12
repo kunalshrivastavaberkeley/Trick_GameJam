@@ -82,3 +82,36 @@ Player: "I'm in your walls... - Oski"
 <<set $read_pennant to true>>
 ===
 
+title: Toilet_Intro
+---
+<<declare $toilet_clicks = 0>>
+Player: It's a toilet. I see something shiny is stuck inside the drain...
+Player: Maybe if I flush it enough times it'll come loose.
+===
+
+title: Toilet_Progress
+---
+<<if $toilet_clicks >= 499>>
+    Player: I can feel it. One more flush. ONE MORE.
+<<elseif $toilet_clicks >= 400>>
+    Player: My wrist hurts. Why am I doing this for a ring.
+<<elseif $toilet_clicks >= 250>>
+    Player: Halfway there... I think it moved a little?
+<<elseif $toilet_clicks >= 100>>
+    Player: 100 flushes. The water bill is going to be so high
+<<else>>
+    Player: *flush*
+<<endif>>
+===
+
+title: Toilet_Ring
+---
+Player: ...!!! Something popped out!
+Player: It's a wedding ring. Gross. But it has a HUGE diamond.
+<<set $has_ring to true>>
+===
+
+title: Toilet_Done
+---
+Player: I am never touching a toilet again.
+===
